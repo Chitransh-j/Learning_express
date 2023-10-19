@@ -24,14 +24,13 @@ app.use(express.json()) //middleware for converting the response body to json
 
 app.use('/site',express.static(path.join(__dirname,'public'))) // middleware to join static filesnpm
 
+
 app.get('/',(req,res)=>{
     res.render('index',{
         title: 'Hello World',
-        caption: 'Chitransh learns Backend'
+        caption: 'Chitransh learns Backend',
     })
 })
-
-
 
 app.use('/friends',friendsRouter)
 app.use('/messages',messageRouter)
